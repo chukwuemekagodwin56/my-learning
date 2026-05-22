@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Shipment — Emeka Logistics</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">EMEKA<span class="logo-accent"> LOGISTICS</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tracking.html" class="active">Tracking</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag">Real-Time Updates</span>
+      <h1>Track Your Shipment</h1>
+      <p>Enter your tracking number to get live updates on your cargo.</p>
+    </div>
+  </section>
+
+  <section class="tracking-section">
+    <div class="container">
+      <div class="tracking-box">
+        <h2>Enter Tracking Number</h2>
+        <div class="track-input-row">
+          <input type="text" id="trackInput" placeholder="e.g. EML-2026-00482" />
+          <button class="btn-primary" onclick="trackShipment()">Track Now</button>
+        </div>
+        <p class="track-hint">Format: EML-YYYY-XXXXX</p>
+      </div>
+
+      <div class="track-result" id="trackResult" style="display:none;">
+        <div class="track-result-header">
+          <div>
+            <span class="section-tag">Tracking Result</span>
+            <h3 id="trackNumber">EML-2026-00482</h3>
+          </div>
+          <span class="ship-status" style="font-size:1rem;">● In Transit</span>
+        </div>
+
+        <div class="track-route">
+          <div class="tr-point active">
+            <div class="tr-dot"></div>
+            <div>
+              <strong>Departed — Lagos Port, Nigeria</strong>
+              <span>May 10, 2026 — 08:42 AM</span>
+            </div>
+          </div>
+          <div class="tr-line"></div>
+          <div class="tr-point active">
+            <div class="tr-dot"></div>
+            <div>
+              <strong>In Transit — Atlantic Ocean</strong>
+              <span>May 14, 2026 — En route</span>
+            </div>
+          </div>
+          <div class="tr-line"></div>
+          <div class="tr-point">
+            <div class="tr-dot pending"></div>
+            <div>
+              <strong>Arriving — Rotterdam Port, Netherlands</strong>
+              <span>Est. Jun 3, 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="track-meta">
+          <div><span>Cargo Type</span><strong>42 Containers (FCL)</strong></div>
+          <div><span>Carrier</span><strong>MSC Meridian</strong></div>
+          <div><span>Progress</span><strong>68%</strong></div>
+          <div><span>Last Updated</span><strong>May 20, 2026</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">EMEKA<span class="logo-accent"> LOGISTICS</span></span>
+        </a>
+        <p>Moving cargo across the globe with precision and integrity.</p>
+      </div>
+      <div class="footer-links"><h4>Quick Links</h4><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tracking.html">Track Shipment</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Services</h4><ul>
+        <li><a href="services.html">Ocean Freight</a></li>
+        <li><a href="services.html">Air Freight</a></li>
+        <li><a href="services.html">Road Haulage</a></li>
+        <li><a href="services.html">Customs Clearance</a></li>
+      </ul></div>
+      <div class="footer-contact"><h4>Contact</h4>
+        <p>📍 Lagos, Nigeria</p>
+        <p>📞 +234 800 000 0000</p>
+        <p>✉️ info@emekalogistics.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Emeka Logistics. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    function trackShipment() {
+      const val = document.getElementById('trackInput').value.trim();
+      if (!val) { alert('Please enter a tracking number.'); return; }
+      document.getElementById('trackNumber').textContent = val;
+      document.getElementById('trackResult').style.display = 'block';
+      document.getElementById('trackResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    document.getElementById('trackInput')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') trackShipment();
+    });
+  </script>
+</body>
+</html>

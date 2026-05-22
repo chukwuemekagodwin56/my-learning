@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Shipment — Emeka Logistics</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span class="logo-text">EMEKA <strong>LOGISTICS</strong></span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="tracking.html" class="active">Track Shipment</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn-nav">Get a Quote</a>
+      </nav>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="section-label">Shipment Tracking</div>
+    <h1>Track Your Cargo</h1>
+    <p>Enter your tracking number to get real-time updates on your shipment status.</p>
+  </section>
+
+  <section class="section" style="background: var(--off-white);">
+    <div class="container">
+      <div class="tracking-box">
+        <h2>Enter Tracking Number</h2>
+        <div class="form-group">
+          <label for="trackInput">Tracking / Bill of Lading Number</label>
+          <input type="text" id="trackInput" placeholder="e.g. EML-2026-001234" style="background: rgba(255,255,255,0.08); border-color: var(--border); color: var(--white);" />
+        </div>
+        <button class="btn-primary" onclick="trackShipment()" style="width: 100%; text-align: center; border: none; cursor: pointer; font-size: 1rem; padding: 1rem;">Track Shipment →</button>
+
+        <div class="tracking-result" id="trackResult">
+          <p style="color: var(--gold); font-family: var(--font-cond); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">Tracking: <span id="trackNum">—</span></p>
+          <div class="track-step">
+            <div class="track-dot active"></div>
+            <div class="track-info"><strong>In Transit — Rotterdam Port</strong><small>May 20, 2026 — 09:14 UTC</small></div>
+          </div>
+          <div class="track-step">
+            <div class="track-dot"></div>
+            <div class="track-info"><strong>Departed — Shanghai Port</strong><small>May 14, 2026 — 18:30 UTC</small></div>
+          </div>
+          <div class="track-step">
+            <div class="track-dot"></div>
+            <div class="track-info"><strong>Customs Cleared — Shanghai</strong><small>May 13, 2026 — 11:00 UTC</small></div>
+          </div>
+          <div class="track-step">
+            <div class="track-dot"></div>
+            <div class="track-info"><strong>Received at Origin Warehouse</strong><small>May 11, 2026 — 08:45 UTC</small></div>
+          </div>
+          <div class="track-step">
+            <div class="track-dot"></div>
+            <div class="track-info"><strong>Booking Confirmed</strong><small>May 10, 2026 — 14:22 UTC</small></div>
+          </div>
+          <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">Estimated Arrival: <strong style="color: var(--gold);">May 28, 2026</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-icon">⬡</span><span class="logo-text">EMEKA <strong>LOGISTICS</strong></span></div>
+        <p>Your trusted freight and shipping partner.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><a href="services.html">Sea Freight</a><a href="services.html">Air Freight</a><a href="services.html">Road Haulage</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><p>📍 Lagos, Nigeria</p><p>📞 +234 800 000 0000</p><p>✉️ info@emekalogistics.com</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Emeka Logistics. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function trackShipment() {
+      const val = document.getElementById('trackInput').value.trim();
+      if (!val) { alert('Please enter a tracking number.'); return; }
+      document.getElementById('trackNum').textContent = val;
+      const result = document.getElementById('trackResult');
+      result.classList.add('show');
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    document.getElementById('trackInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') trackShipment();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Emeka Logistics</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span class="logo-text">EMEKA <strong>LOGISTICS</strong></span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="services.html">Services</a>
+        <a href="tracking.html">Track Shipment</a><a href="about.html">About</a>
+        <a href="contact.html" class="btn-nav active">Get a Quote</a>
+      </nav>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="section-label">Reach Us</div>
+    <h1>Get in Touch</h1>
+    <p>Tell us about your cargo needs and we'll get back to you within 24 hours with a custom quote.</p>
+  </section>
+
+  <section class="section" style="background: var(--off-white);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start;">
+
+        <div>
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--navy); margin-bottom: 2rem;">Contact Information</h2>
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">📍</div>
+              <div><strong style="display: block; color: var(--navy); font-family: var(--font-cond); letter-spacing: 0.05em;">Head Office</strong><span style="color: #4a5568; font-size: 0.95rem;">123 Marina Road, Lagos Island, Lagos, Nigeria</span></div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">📞</div>
+              <div><strong style="display: block; color: var(--navy); font-family: var(--font-cond); letter-spacing: 0.05em;">Phone</strong><span style="color: #4a5568; font-size: 0.95rem;">+234 800 000 0000</span></div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">✉️</div>
+              <div><strong style="display: block; color: var(--navy); font-family: var(--font-cond); letter-spacing: 0.05em;">Email</strong><span style="color: #4a5568; font-size: 0.95rem;">info@emekalogistics.com</span></div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.5rem;">🕐</div>
+              <div><strong style="display: block; color: var(--navy); font-family: var(--font-cond); letter-spacing: 0.05em;">Working Hours</strong><span style="color: #4a5568; font-size: 0.95rem;">Mon–Fri: 8am – 6pm WAT<br />Sat: 9am – 2pm WAT</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--white); border-radius: 12px; padding: 2.5rem; border: 1px solid #e8e2d4;">
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--navy); margin-bottom: 2rem;">Request a Quote</h2>
+          <div id="contactForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name" /></div>
+              <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@company.com" /></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+234..." /></div>
+              <div class="form-group"><label>Company Name</label><input type="text" placeholder="Your company" /></div>
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select>
+                <option value="">Select a service</option>
+                <option>Sea Freight</option>
+                <option>Air Freight</option>
+                <option>Road Haulage</option>
+                <option>Customs & Clearance</option>
+                <option>Warehousing</option>
+                <option>Last-Mile Delivery</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Shipment Details</label>
+              <textarea placeholder="Describe your cargo — type, weight, origin, destination, and any special requirements..."></textarea>
+            </div>
+            <button class="btn-primary" onclick="submitForm()" style="width: 100%; border: none; cursor: pointer; font-size: 1rem; padding: 1rem;">Send Request →</button>
+          </div>
+          <div id="successMsg" style="display: none; text-align: center; padding: 3rem 1rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+            <h3 style="font-family: var(--font-display); color: var(--navy); font-size: 1.5rem; margin-bottom: 0.75rem;">Request Received!</h3>
+            <p style="color: #4a5568;">Thank you for reaching out. Our team will contact you within 24 hours with a custom quote.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><div class="logo"><span class="logo-icon">⬡</span><span class="logo-text">EMEKA <strong>LOGISTICS</strong></span></div><p>Your trusted freight and shipping partner.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="services.html">Sea Freight</a><a href="services.html">Air Freight</a><a href="services.html">Road Haulage</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="tracking.html">Track Shipment</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Contact</h4><p>📍 Lagos, Nigeria</p><p>📞 +234 800 000 0000</p><p>✉️ info@emekalogistics.com</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Emeka Logistics. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function submitForm() {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+  <style>
+    @media (max-width: 720px) {
+      .container > div[style*="grid-template-columns: 1fr 1.5fr"] { grid-template-columns: 1fr !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>
